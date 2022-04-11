@@ -5,4 +5,5 @@ export const messages = {
 	UnAuthorizedRequest: 'Please Login in to continue!',
 	ErrorOccured: 'Error occured!',
 	IncorrectCredentials: 'Incorrect Credentials!',
+	SuccessFullyLoggedIn: 'Successfully Logged In.',
 };

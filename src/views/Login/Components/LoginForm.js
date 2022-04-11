@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 export const LoginForm = (props) => {
 	const { login } = props;
 	const [form, setForm] = useState({
-		username: 'Mikael',
-		password: 'Mik%00412855',
+		username: 'NewUser',
+		password: '1234567',
 	});
 
 	const handleSubmit = async (event) => {
