@@ -1,11 +1,10 @@
 import React from 'react';
 import Cookies from 'js-cookie';
 import { enableInterceptors } from '@/utils/axios';
-// dont haves
+import { refreshToken } from '@/api/authProvider';
 import parseJwt from '@/utils/parseJWT';
 import removeAuthTokens from '@/utils/removeAuthTokens';
-import useRouter from '@/utils/useRouter';
-import { refreshToken } from '@/api/authProvider';
+// import useRouter from '@/utils/useRouter';
 import setAuthTokens from '@/utils/setAuthTokens';
 
 const UserContext = React.createContext();
@@ -30,7 +29,7 @@ export const useUser = () => {
 export const useInitUser = () => {
 	const { setUser } = useUser();
 
-	const router = useRouter();
+	// const router = useRouter();
 
 	const handleUnauthorizedRequest = () => {
 		removeAuthTokens();

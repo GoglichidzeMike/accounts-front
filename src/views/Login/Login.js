@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { loginUser } from '../../api/authProvider';
+import { useInitUser } from '@/context/userContext';
+// import useRouter from '@/utils/useRouter';
 
 const Login = () => {
-	const [username, setUsername] = useState('');
-	const [password, setPassword] = useState('');
+	const [username, setUsername] = useState('Mikael');
+	const [password, setPassword] = useState('Mik%00412855');
+	const { initUser } = useInitUser();
+	const navigate = useNavigate();
 
 	const handleUsername = (e) => {
 		console.log(e.target.value);
@@ -22,7 +26,7 @@ const Login = () => {
 			console.log(res);
 			if (signInResult.succeeded) {
 				initUser({ token, refreshToken });
-				router.history.push('/');
+				return navigate('/account');
 			} else {
 				alert('try again');
 			}
@@ -33,13 +37,10 @@ const Login = () => {
 	};
 	const handleSubmit = async (event) => {
 		event.preventDefault();
-		const res = await login({
-			username: username,
+		await login({
+			username,
 			password,
 		});
-		const { userId, token, refreshToken } = res;
-		console.log(res);
-		console.log(userId, token, refreshToken);
 	};
 
 	return (
