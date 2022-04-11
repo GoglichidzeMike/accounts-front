@@ -1,10 +1,23 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { useState } from 'react';
 
 export const LoginForm = (props) => {
-	const { handleUsername, username, handlePassword, password, handleSubmit } =
-		props;
+	const { login } = props;
+	const [form, setForm] = useState({
+		username: 'Mikael',
+		password: 'Mik%00412855',
+	});
 
+	const handleSubmit = async (event) => {
+		event.preventDefault();
+		await login({
+			username: form.username,
+			password: form.password,
+		});
+	};
+	const onChange = ({ target: { value, name } }) => {
+		setForm({ ...form, [name]: value });
+	};
 	return (
 		<div className='mx-auto w-72 border border-gray-400 shadow rounded p-4'>
 			<p className='text-center font-bold'>Login</p>
@@ -16,8 +29,8 @@ export const LoginForm = (props) => {
 					type='text'
 					name='username'
 					className='p-1 border  rounded border-gray-400'
-					onChange={handleUsername}
-					value={username}
+					onChange={onChange}
+					value={form.username || ''}
 				/>
 			</div>
 			<div className='flex flex-col my-2'>
@@ -28,8 +41,8 @@ export const LoginForm = (props) => {
 					type='password'
 					name='password'
 					className='p-1 border  rounded border-gray-400'
-					onChange={handlePassword}
-					value={password}
+					onChange={onChange}
+					value={form.password || ''}
 				/>
 			</div>
 			<div className='flex justify-center my-1 text-white font-bold'>
@@ -45,9 +58,5 @@ export const LoginForm = (props) => {
 };
 
 LoginForm.propTypes = {
-	handleUsername: PropTypes.func.isRequired,
-	handlePassword: PropTypes.func.isRequired,
-	handleSubmit: PropTypes.func.isRequired,
-	username: PropTypes.string.isRequired,
-	password: PropTypes.string.isRequired,
+	login: PropTypes.func.isRequired,
 };
