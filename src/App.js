@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+// import ScrollReset from './components/ScrollReset';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Login from './views/Login';
+import Account from './views/Account';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+	return (
+		<BrowserRouter>
+			<Routes>
+				<Route path='/login' exact element={<Login />} />
+				<Route path='/' exact element={<Account />} />
+			</Routes>
+		</BrowserRouter>
+	);
+};
 
 export default App;
