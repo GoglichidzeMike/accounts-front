@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './views/Login';
 import Account from './views/Account';
 import { UserProvider } from '@/context/userContext';
+import AuthGuard from './components/AuthGuard';
 
 const App = () => {
 	return (
@@ -11,7 +12,15 @@ const App = () => {
 			<UserProvider>
 				<Routes>
 					<Route path='/login' exact element={<Login />} />
-					<Route path='/account' exact element={<Account />} />
+					<Route
+						exact
+						path='/account'
+						element={
+							<AuthGuard>
+								<Account />
+							</AuthGuard>
+						}
+					></Route>
 				</Routes>
 			</UserProvider>
 		</BrowserRouter>
