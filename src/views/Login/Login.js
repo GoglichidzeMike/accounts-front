@@ -59,6 +59,12 @@ const Login = () => {
 			>
 				<Link to='/account'>Acocunt page</Link>
 			</div>
+			<p>
+				Don&apos;t have an acocunt?
+				<Link to='/signup' className='ml-1 underline'>
+					Sign up here
+				</Link>
+			</p>
 		</div>
 	);
 };

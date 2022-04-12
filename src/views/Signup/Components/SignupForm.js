@@ -20,7 +20,7 @@ export const SignUpForm = (props) => {
 	};
 	return (
 		<div className='mx-auto w-72 border border-gray-400 shadow rounded p-4'>
-			<p className='text-center font-bold'>Register here bro.</p>
+			<p className='text-center font-bold'>Sign Up</p>
 			<div className='flex flex-col my-2'>
 				<label htmlFor='username' className='text-gray-700'>
 					Username

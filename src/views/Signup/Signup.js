@@ -58,8 +58,13 @@ const Signup = () => {
 					text-white'
 			>
 				<Link to='/account'>Acocunt page</Link>
-				<Link to='/login'>Login page</Link>
 			</div>
+			<p>
+				Already have an acocunt?
+				<Link to='/login' className='ml-1 underline'>
+					Log In here
+				</Link>
+			</p>
 		</div>
 	);
 };
