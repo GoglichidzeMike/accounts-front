@@ -45,7 +45,6 @@ const AuthGuard = (props) => {
 	useEffect(() => {
 		checkUser();
 	}, []);
-	console.log(isLoaded);
 
 	return <>{isLoaded && children}</>;
 };

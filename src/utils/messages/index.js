@@ -6,4 +6,5 @@ export const messages = {
 	ErrorOccured: 'Error occured!',
 	IncorrectCredentials: 'Incorrect Credentials!',
 	SuccessFullyLoggedIn: 'Successfully Logged In.',
+	SucessFullyRegistered: 'Successfully created an account',
 };
