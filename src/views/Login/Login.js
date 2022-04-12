@@ -13,7 +13,7 @@ const Login = () => {
 
 	useEffect(() => {
 		if (Cookies.get('token')) {
-			navigate('/account');
+			navigate('/');
 		}
 	}, []);
 
@@ -38,7 +38,7 @@ const Login = () => {
 			if (signInResult.succeeded) {
 				initUser({ token, refreshToken });
 				createToast(messages.SuccessFullyLoggedIn, 'success');
-				return navigate('/account');
+				return navigate('/');
 			} else {
 				createToast(messages.IncorrectCredentials, 'warning');
 				alert('try again');
@@ -57,7 +57,7 @@ const Login = () => {
 					bg-blue-300 px-2 my-2 w-72
 					text-white'
 			>
-				<Link to='/account'>Acocunt page</Link>
+				<Link to='/'>Acocunt page</Link>
 			</div>
 			<p>
 				Don&apos;t have an acocunt?

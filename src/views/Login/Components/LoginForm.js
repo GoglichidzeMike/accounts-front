@@ -20,7 +20,7 @@ export const LoginForm = (props) => {
 	};
 	return (
 		<div className='mx-auto w-72 border border-gray-400 shadow rounded p-4'>
-			<p className='text-center font-bold'>Login</p>
+			<h1 className='text-center font-bold'>Login</h1>
 			<div className='flex flex-col my-2'>
 				<label htmlFor='username' className='text-gray-700'>
 					Username

@@ -17,16 +17,10 @@ const App = () => {
 						<Routes>
 							<Route path='/login' exact element={<Login />} />
 							<Route path='/signup' exact element={<Signup />} />
-
-							<Route
-								exact
-								path='/account'
-								element={
-									<AuthGuard>
-										<Account />
-									</AuthGuard>
-								}
-							></Route>
+							<Route element={<AuthGuard />}>
+								<Route path='/' element={<Account />} />
+								<Route path='/dashboard' element={<Account />} />
+							</Route>
 						</Routes>
 					</ScrollReset>
 				</ToastProvider>

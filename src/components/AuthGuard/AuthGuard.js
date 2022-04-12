@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import Cookies from 'js-cookie';
 
 import removeAuthTokens from '@/utils/removeAuthTokens';
 import { useInitUser } from '@/context/userContext';
 import { refreshToken } from '@/api/authProvider';
-import { useNavigate } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 
 const getToken = () => Cookies.get('token');
 
-const AuthGuard = (props) => {
-	const { children } = props;
+const AuthGuard = () => {
+	// const { children } = props;
 	const { initUser } = useInitUser();
 
 	const [isLoaded, setIsLoaded] = React.useState(false);
@@ -46,11 +46,11 @@ const AuthGuard = (props) => {
 		checkUser();
 	}, []);
 
-	return <>{isLoaded && children}</>;
+	return <>{isLoaded && <Outlet />}</>;
 };
 
-AuthGuard.propTypes = {
-	children: PropTypes.node.isRequired,
-};
+// AuthGuard.propTypes = {
+// 	children: PropTypes.node.isRequired,
+// };
 
 export default AuthGuard;
