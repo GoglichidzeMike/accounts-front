@@ -8,7 +8,6 @@ const Users = () => {
 	const fetchUsers = async () => {
 		const res = await getUsers();
 		setUsers(res);
-		console.log(users);
 	};
 
 	useEffect(() => {

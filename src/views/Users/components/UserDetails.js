@@ -1,5 +1,6 @@
 import { PropTypes } from 'prop-types';
 import React from 'react';
+import formatDate from '@/utils/formatDate';
 
 export function UserDetails({ handleContentToggle, user }) {
 	return (
@@ -15,14 +16,14 @@ export function UserDetails({ handleContentToggle, user }) {
 				)}
 				<p className='inline'>{user.username}</p>
 			</div>
-			<div>
-				<p>{user.createdAt}</p>
-			</div>
-			<div>
+			<div className='hidden md:block'>
 				<p>{user.phones.length}</p>
 			</div>
-			<div>
+			<div className='hidden md:block'>
 				<p>{user.accounts.length}</p>
+			</div>
+			<div>
+				<p>{formatDate(user.createdAt)}</p>
 			</div>
 		</div>
 	);

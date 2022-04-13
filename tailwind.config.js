@@ -9,6 +9,10 @@ module.exports = {
 				fourth: '#e29578',
 				light: '#edf6f9',
 			},
+			width: {
+				97: '97%',
+				95: '95%',
+			},
 		},
 	},
 	plugins: [],

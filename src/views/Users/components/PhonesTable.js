@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import formatDate from '@/utils/formatDate';
 
-const Phones = (props) => {
+const PhonesTable = (props) => {
 	const { phones } = props;
 
 	return (
@@ -14,7 +15,7 @@ const Phones = (props) => {
 				<div>
 					<p>Status</p>
 				</div>
-				<div>
+				<div className='hidden md:block'>
 					<p>Created</p>
 				</div>
 			</div>
@@ -28,8 +29,8 @@ const Phones = (props) => {
 							<div>
 								<p>{phone.status}</p>
 							</div>
-							<div>
-								<p>{phone.createdAt}</p>
+							<div className='hidden md:block'>
+								<p>{formatDate(phone.createdAt)}</p>
 							</div>
 						</div>
 					);
@@ -45,8 +46,8 @@ const Phones = (props) => {
 	);
 };
 
-export default Phones;
+export default PhonesTable;
 
-Phones.propTypes = {
+PhonesTable.propTypes = {
 	phones: PropTypes.array.isRequired,
 };

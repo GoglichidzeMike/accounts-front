@@ -1,6 +1,6 @@
 import { UserDetails } from './UserDetails';
-import { Accounts } from './Accounts';
-import Phones from './Phones';
+import AccountsTable from './AccountsTable';
+import PhonesTable from './PhonesTable';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -18,14 +18,14 @@ export const Table = ({ users }) => {
 				<div>
 					<p>Name</p>
 				</div>
-				<div>
-					<p>Created At</p>
-				</div>
-				<div>
+				<div className='hidden md:block'>
 					<p># of Phones</p>
 				</div>
-				<div>
+				<div className='hidden md:block'>
 					<p># of Accounts</p>
+				</div>
+				<div>
+					<p>Created At</p>
 				</div>
 			</div>
 			<div className='rows'>
@@ -39,8 +39,8 @@ export const Table = ({ users }) => {
 								/>
 								{user.phones.length && user.accounts.length ? (
 									<div className='table-content'>
-										<Phones phones={user.phones} />
-										<Accounts accounts={user.accounts} />
+										<PhonesTable phones={user.phones} />
+										<AccountsTable accounts={user.accounts} />
 									</div>
 								) : (
 									''

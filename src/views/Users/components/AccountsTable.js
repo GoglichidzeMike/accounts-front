@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import formatDate from '@/utils/formatDate';
 
-export function Accounts({ accounts }) {
+const AccountsTable = ({ accounts }) => {
 	return (
 		<div className='accounts'>
 			<p className='text-sm text-accent font-bold text-center'>
@@ -14,7 +15,7 @@ export function Accounts({ accounts }) {
 				<div>
 					<p>Status</p>
 				</div>
-				<div>
+				<div className='hidden md:block'>
 					<p>Created</p>
 				</div>
 			</div>
@@ -28,8 +29,8 @@ export function Accounts({ accounts }) {
 							<div>
 								<p>{account.status}</p>
 							</div>
-							<div>
-								<p>{account.createdAt}</p>
+							<div className='hidden md:block'>
+								<p>{formatDate(account.createdAt)}</p>
 							</div>
 						</div>
 					);
@@ -43,8 +44,10 @@ export function Accounts({ accounts }) {
 			})}
 		</div>
 	);
-}
+};
 
-Accounts.propTypes = {
+AccountsTable.propTypes = {
 	accounts: PropTypes.array.isRequired,
 };
+
+export default AccountsTable;
