@@ -45,7 +45,7 @@ export const LoginForm = (props) => {
 					value={form.password || ''}
 				/>
 			</div>
-			<div className='flex justify-center my-1 text-white font-bold'>
+			<div className='flex justify-center my-1 text-light font-bold'>
 				<button
 					className='px-2 py-1 bg-green-300 rounded'
 					onClick={handleSubmit}

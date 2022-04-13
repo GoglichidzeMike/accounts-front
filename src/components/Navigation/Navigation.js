@@ -13,12 +13,15 @@ const Navigation = () => {
 		setUser({});
 	};
 	return (
-		<nav className='w-100 bg-main text-white shadow-md'>
+		<nav className='w-100 bg-accent text-light shadow-md'>
 			<div className='container flex items-center py-3 justify-between'>
 				<div className=''>
 					<Link to='/'>Home</Link>
 				</div>
 				<div className=''>
+					<Link to='/users' className='mr-2 p-1'>
+						Users
+					</Link>
 					<Link to='/' className='mr-2 p-1'>
 						Phones & Accounts
 					</Link>

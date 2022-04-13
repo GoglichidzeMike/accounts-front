@@ -14,3 +14,86 @@ h1 {
 	max-width: 1280px;
 	margin: 0 auto;
 }
+
+.table {
+	@apply flex  p-1 shadow;
+
+	div {
+		@apply font-medium border-r py-2 px-3;
+		width: 25%;
+		&:last-child {
+			border: 0;
+		}
+	}
+}
+
+.table-header {
+	@apply flex bg-accent text-light mt-5 rounded-t-md;
+}
+
+.table-element {
+	@apply flex text-accent bg-opacity-80 hover:bg-opacity-100 transition-opacity duration-200 ease-linear;
+}
+
+.single-entry {
+	@apply bg-light;
+	&:nth-child(odd) {
+		@apply bg-gray-200;
+	}
+	overflow: hidden;
+}
+
+.table-content {
+	max-height: 0;
+	transition: max-height 0.3s linear;
+	@apply bg-light bg-opacity-50 px-2 flex;
+	.phones,
+	.accounts {
+		@apply w-full p-2;
+	}
+
+	.content-table-header {
+		@apply flex w-full bg-accent rounded-t text-light font-light text-sm;
+
+		div {
+			width: 33%;
+			@apply border-r p-1;
+
+			&:last-child {
+				border-right: 0;
+			}
+		}
+	}
+	.content-table-element {
+		@apply flex w-full bg-light rounded-t text-accent text-sm;
+		div {
+			width: 33%;
+			@apply border-r py-1 px-2 border-b;
+
+			&:last-child {
+				border-right: 0;
+			}
+		}
+	}
+}
+.toggle-content {
+	max-height: 300px;
+}
+
+// arrow
+.arrow {
+	border: solid #006d77;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 3px;
+	transition: transform 0.2s linear;
+}
+
+.down {
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+}
+
+.toggle-arrow {
+	transform: rotate(-135deg);
+}

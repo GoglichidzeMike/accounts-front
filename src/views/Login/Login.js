@@ -55,7 +55,7 @@ const Login = () => {
 			<div
 				className='py-2 rounded border border-gray-400 text-center
 					bg-blue-300 px-2 my-2 w-72
-					text-white'
+					text-light'
 			>
 				<Link to='/'>Acocunt page</Link>
 			</div>

@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './views/Login';
 import Signup from './views/Signup';
 import Account from './views/Account';
+import Users from '@/views/Users/Users';
 import { UserProvider } from '@/context/userContext';
 import AuthGuard from './components/AuthGuard';
 import { ToastProvider } from 'react-toast-notifications';
@@ -21,7 +22,7 @@ const App = () => {
 							<Route path='/signup' exact element={<Signup />} />
 							<Route element={<AuthGuard />}>
 								<Route path='/' element={<Account />} />
-								<Route path='/dashboard' element={<Account />} />
+								<Route path='/users' element={<Users />} />
 							</Route>
 						</Routes>
 					</ScrollReset>
